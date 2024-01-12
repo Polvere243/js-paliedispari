@@ -9,10 +9,10 @@ function isPalindrome (text1) {
     for (let i = text1.length - 1; i >= 0; i--){
         text2 += text1[i];
     }
-
+    let message = "La parola"
     text2.toLowerCase() === text1.toLowerCase() 
-    ? paragraph.innerText = "La parola è palindroma" 
-    : paragraph.innerText = "La parola non è palindroma";
+    ? paragraph.innerText = message += "è palindroma" 
+    : paragraph.innerText = message += "non è palindroma";
     
 }
 
