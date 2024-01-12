@@ -10,7 +10,9 @@ function isPalindrome (text1) {
         text2 += text1[i];
     }
 
-    text2.toLowerCase() === text1.toLowerCase() ? paragraph.innerText = "La parola è palindroma" : paragraph.innerText = "La parola non è palindroma";
+    text2.toLowerCase() === text1.toLowerCase() 
+    ? paragraph.innerText = "La parola è palindroma" 
+    : paragraph.innerText = "La parola non è palindroma";
     
 }
 
