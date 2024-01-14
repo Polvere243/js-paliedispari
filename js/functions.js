@@ -5,21 +5,34 @@
  */
 
 function isPalindrome (text1) {
+    text1 = text1.toLowerCase();
     let text2 = "";
     for (let i = text1.length - 1; i >= 0; i--){
         text2 += text1[i];
+        console.log(text2);
     }
-    let message = "La parola"
-    text2.toLowerCase() === text1.toLowerCase() 
-    ? paragraph.innerText = message += "è palindroma" 
-    : paragraph.innerText = message += "non è palindroma";
-    
+    return text1 === text2;
 }
 
 
 
+/**
+ * Generates a random number from 1 to 5
+ * @param {number} min the minimum number 
+ * @param {number} max the maximum number
+ * @returns random number
+ */
+
+function createRandomNumber (min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 
-function createRandomNumber (num1, num2) {
-    const randomNumber = Math.floor(Math.randome * (num2))+1;
+/**
+ * Checks whether a given number is even or odd
+ * @param {number} num is the number to check
+ * @returns boolean
+ */
+function isEven (num) {
+    return num % 2 === 0;
 }
