@@ -24,7 +24,7 @@ function isPalindrome (text1) {
  */
 
 function createRandomNumber (min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    return Math.floor(Math.random() * (max + 1 - min)) + min;
 }
 
 
