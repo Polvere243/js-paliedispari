@@ -3,6 +3,10 @@ const form = document.querySelector("form");
 const input = document.querySelector("input");
 const paragraph = document.querySelector("p");
 const element = document.querySelector(".even-odd");
+const formEvenOdd = document.querySelector(".game");
+const selectfield = document.getElementById("choice");
+const numberField = document.getElementById("number");
+
 // al click sul bottone recupero una parola scelta dall'utente
 form.addEventListener ("submit", function(event) {
     event.preventDefault();
@@ -22,21 +26,26 @@ form.addEventListener ("submit", function(event) {
 
 
 /* ----------------------------------------------------- */
+// aggancio il form al click 
+formEvenOdd.addEventListener ("submit", function(e) {
+    e.preventDefault();
 
-// sottopongo la scelta tra pari e dispari all'utente
+    // raccolgo la scelta tra pari e dispari dell'utente
 
-const userChoice = prompt("Pari o dispari?").trim().toLowerCase();
+const userChoice = selectfield.value;
 console.log("scelta: ", userChoice);
 // chiedo all'utente di inserire un numero da 1 a 5
 
-const userNumber = parseInt(prompt("Inserisci un numero da 1 a 5"));
+const userNumber = parseInt(numberField.value);
 console.log(("numero dell'utente: ", userNumber));
-if (isNaN(userNumber) || userNumber < 0){
-    alert("Fratm, devi inserire un numero!");
+if (userNumber < 1 || userNumber > 5){
+    console.error("Fratm, devi inserire un numero da 1 a 5!");
+    return;
 }
 
-if (userChoice !== "pari" && userChoice !== "dispari"){
-    alert("Fratm, devi scegliere tra pari e dispari");
+if (userChoice !== "even" && userChoice !== "odd"){
+    console.error("Fratm, devi scegliere tra pari e dispari");
+    return;
 }
 
 
@@ -52,7 +61,7 @@ console.log("la somma è: ", sum);
 
 // invoco la funzione per controllare se la somma sia pari o dispari
 
-const winningChoice = isEven (sum) ? "pari" : "dispari";
+const winningChoice = isEven (sum) ? "even" : "odd";
 
 // inizio a creare il messaggio 
 
@@ -64,4 +73,6 @@ const winner = winningChoice === userChoice ? "l'utente.</p>" : "il computer.</p
 // stampo il messaggio in pagina
 
 element.innerHTML = message += winner;
+})
+
 
